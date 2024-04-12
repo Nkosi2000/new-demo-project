@@ -1,19 +1,32 @@
+// Function to toggle dark/light mode
+function toggleDarkMode() {
+    // Check current mode
+    const isDarkMode = document.body.classList.contains('dark-mode');
+
+    // Toggle mode
+    if (isDarkMode) {
+        // Switch to light mode
+        document.body.classList.remove('dark-mode');
+    } else {
+        // Switch to dark mode
+        document.body.classList.add('dark-mode');
+    }
+}
+
+// Function to toggle the menu
 function toggleMenu() {
     var menuLinks = document.getElementById("menuLinks");
     var sidebar = document.querySelector(".sidebar");
 
     if (menuLinks.style.display === "block") {
-        menuLinks.style.display = "none";
         sidebar.classList.remove("open");
     } else {
-        menuLinks.style.display = "block";
         sidebar.classList.add("open");
     }
 }
 
 // Function to handle form submission
-function sendMessage(event) 
-{
+function sendMessage(event) {
     // Prevent the form from submitting by default
     event.preventDefault();
 
@@ -23,25 +36,20 @@ function sendMessage(event)
     var message = document.querySelector("textarea[name='Message']").value.trim();
 
     // Validation
-    if (name === "") 
-    {
+    if (name === "") {
         showError("Please enter your name.");
         return;
     }
 
-    if (email === "") 
-    {
+    if (email === "") {
         showError("Please enter your email address.");
         return;
-    } 
-    else if (!validateEmail(email)) 
-    {
+    } else if (!validateEmail(email)) {
         showError("Please enter a valid email address.");
         return;
     }
 
-    if (message === "") 
-    {
+    if (message === "") {
         showError("Please enter your message.");
         return;
     }
@@ -51,15 +59,13 @@ function sendMessage(event)
 }
 
 // Function to validate email address
-function validateEmail(email) 
-{
+function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
 
 // Function to display error messages
-function showError(message) 
-{
+function showError(message) {
     // Create a new paragraph element to display the error message
     var errorElement = document.createElement("p");
     errorElement.textContent = message;
@@ -71,8 +77,7 @@ function showError(message)
 }
 
 // Function to remove error messages
-function clearErrors() 
-{
+function clearErrors() {
     // Remove all elements with the 'error' class
     var errors = document.querySelectorAll(".error");
     errors.forEach(function(error) {
@@ -81,12 +86,16 @@ function clearErrors()
 }
 
 // Function to initialize event listeners
-function initialize() 
-{
+function initialize() {
     var form = document.querySelector("form");
     form.addEventListener("submit", sendMessage);
     form.addEventListener("input", clearErrors);
+
+    // Add event listener for dark/light mode toggle button
+    const modeToggleBtn = document.getElementById('mode-toggle');
+    modeToggleBtn.addEventListener('click', toggleDarkMode);
 }
 
 // Call the initialize function when the DOM is loaded
 document.addEventListener("DOMContentLoaded", initialize);
+
