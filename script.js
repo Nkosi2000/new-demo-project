@@ -26,39 +26,6 @@ function toggleMenu() {
     }
 }
 
-// Function to handle form submission
-function sendMessage(event) {
-    // Prevent the form from submitting by default
-    event.preventDefault();
-
-    // Retrieve input values
-    var name                    = document.querySelector("input[name='Name']").value.trim();
-    var email                   = document.querySelector("input[id='Email']").value.trim();
-    var message                 = document.querySelector("textarea[name='Message']").value.trim();
-
-    // Validation
-    if (name === "") {
-        showError("Please enter your name.");
-        return;
-    }
-
-    if (email === "") {
-        showError("Please enter your email address.");
-        return;
-    } else if (!validateEmail(email)) {
-        showError("Please enter a valid email address.");
-        return;
-    }
-
-    if (message === "") {
-        showError("Please enter your message.");
-        return;
-    }
-
-    // If all validations pass, submit the form
-    document.querySelector("form").submit();
-}
-
 // Function to validate email address
 function validateEmail(email) {
     var re                      = /\S+@\S+\.\S+/;
