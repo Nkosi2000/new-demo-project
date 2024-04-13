@@ -33,7 +33,7 @@ function sendMessage(event) {
 
     // Retrieve input values
     var name                    = document.querySelector("input[name='Name']").value.trim();
-    var email                   = document.querySelector("input[name='Email']").value.trim();
+    var email                   = document.querySelector("input[id='Email']").value.trim();
     var message                 = document.querySelector("textarea[name='Message']").value.trim();
 
     // Validation
