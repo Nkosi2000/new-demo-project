@@ -238,7 +238,7 @@
 
                 <!--CONTACT INFO ON THE LEFT HAND SIDE-->
                 <div class                = "contact-right" id="CheckMessage">
-                    <form onsubmit        ="sendEmail(); reset(); return false;" >
+                    <form onsubmit        = "sendEmail(); reset(); return false;" >
                         <input type       = "text" name="Name" placeholder="Your Name" >
                         <input type       = "email" id="Email" placeholder="Your Email">
                         <textarea name    = "Message" cols="20" rows="4" placeholder="Your Message..."></textarea>
@@ -250,19 +250,19 @@
         </div>
     </div>
     <!--CONTACT SECTION END-->
-    <script src                           ="https://smtpjs.com/v3/smtp.js"></script>
+    <script src                           = "https://smtpjs.com/v3/smtp.js"></script>
     <script>
         function sendEmail()
         {
             Email.send(
                 {
-                    Host : "smtp.elasticemail.com",
-                    Username : "nkosiphila901@gmai.com",
-                    Password : "C8618B062D5130B45AB6904832778614E8E3",
-                    To : 'nkosiphila901@gmail.com',
-                    From : document.getElementById("Email").value,
-                    Subject : "New contact form enquiry",
-                    Body : "And this is the body"
+                    Host                  : "smtp.gmail.com", //smtp.gmail.com or smtp.elasticemail.com
+                    Username              : "nkosiphila901@gmai.com",
+                    Password              : "C8618B062D5130B45AB6904832778614E8E3",
+                    To                    : 'nkosiphila901@gmail.com',
+                    From                  : document.getElementById("Email").value,
+                    Subject               : "New contact form enquiry",
+                    Body                  : "And this is the body"
                 }).then(
                     message => alert(message)
                 );
