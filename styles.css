@@ -331,6 +331,30 @@ header nav .menu-links a:hover {
     padding                 : 50px 0;
 }
 
+.Container6
+{
+    display: grid;
+}
+
+.Container6 img
+{
+    border-radius: 2rem;
+    width: 20%;
+    height: 20%;
+}
+
+.Container6 img button 
+{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.Container6 button
+{
+    color: 90cdf4;
+    border-color: rgb(163, 163, 163);
+}
+
 .Technologies ul {
     display                 : flex;
     justify-content         : center;
@@ -358,6 +382,7 @@ header nav .menu-links a:hover {
 *::placeholder {
     color                   : #90cdf4;
 }
+
 
 
 #Contact h2 {

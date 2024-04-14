@@ -1,16 +1,18 @@
 // Function to toggle dark/light mode
-function toggleDarkMode() 
-{
+function toggleDarkMode() {
+    const DARK_MODE_CLASS = 'dark-mode';
+    const body = document.body;
+
     // Check current mode
-    const isDarkMode            = document.body.classList.contains('dark-mode');
+    const isDarkMode = body.classList.contains(DARK_MODE_CLASS);
 
     // Toggle mode
     if (isDarkMode) {
         // Switch to light mode
-        document.body.classList.remove('dark-mode');
+        body.classList.remove(DARK_MODE_CLASS);
     } else {
         // Switch to dark mode
-        document.body.classList.add('dark-mode');
+        body.classList.add(DARK_MODE_CLASS);
     }
 }
 
